@@ -11,7 +11,10 @@ usd = get_day()
 
 @app.route("/")
 def home():
-    return "Hello World!"
+    return """
+    <h1> Hi, from Python-2022G <h1>
+    Convert your currency with us
+    """
 
 @app.route('/api/to-usd', methods=['GET'])
 def to_usd():
