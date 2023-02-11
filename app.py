@@ -24,7 +24,9 @@ def to_usd():
                 "convertedCurrency": "USD"
             }
     """
-    pass
+    r = request.args
+    date = float(r["amount"])
+    return {"amount": date, "currency": "UZS", "converted": round(date/usd, 2), "convertedCurrency": "USD"}
 
 @app.route('/api/to-uzs', methods=['GET'])
 def to_uzs():
@@ -46,7 +48,9 @@ def to_uzs():
                 "convertedCurrency": "UZS"
             }
     """
-    pass
+    r = request.args
+    date = float(r["amount"])
+    return {"amount": date, "currency": "UZS", "converted": round(date*usd, 2), "convertedCurrency": "USD"}
     
 
 if __name__ == '__main__':
