@@ -9,6 +9,10 @@ def get_day():
     return data["nbu_buy_price"]
 usd = get_day()
 
+@app.route("/")
+def home():
+    return "Hello World!"
+
 @app.route('/api/to-usd', methods=['GET'])
 def to_usd():
     """
